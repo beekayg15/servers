@@ -56,3 +56,9 @@ CREATE TABLE order_items (
   quantity    INTEGER NOT NULL DEFAULT 1,
   PRIMARY KEY (order_id, product_id)
 );
+
+CREATE TABLE stripe_checkouts (
+  -- The Stripe checkout session used for idempotency protection
+  id TEXT PRIMARY KEY,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
